@@ -1,11 +1,7 @@
 import './App.css';
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link, useRouteMatch
-} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import Login from './components/Login/Login';
 
 function App()
 {
@@ -16,9 +12,7 @@ function App()
             <div>
             <h1>Simple Dynamic Routing!</h1>
             <div>
-            <Link to="/">Home</Link>
-            <Link to="/comment">Comment</Link>
-            <Link to="/thankyou">Thank You</Link>
+
             </div>
             <div>
             <Switch>
@@ -32,11 +26,6 @@ function App()
     );
     //
 }
-
-function Login() {
-  return <h2>Home</h2>;
-}
-
 function Comment() {
   return <h2>Comment</h2>;
 }
