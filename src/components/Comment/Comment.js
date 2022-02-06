@@ -3,18 +3,14 @@ import auth  from '../../auth/auth';
 import '../Form.css';
 
 export default function Comment(props) {
-
  
     const [comment, setComment] = useState();
     const [email, setEmail] = useState();
     const [courseCode, setCourseCode] = useState();
     const [courseName, setCourseName] = useState();
-   // let loggedEmail = auth.getToken();
 
     useEffect(() => {
-      const loggedInUser = auth.getToken();
-     
-    //  setEmail(loggedInUser);
+     const loggedInUser = auth.getToken();
      if (loggedInUser!=="") {
           setEmail(loggedInUser);
       }
@@ -22,11 +18,7 @@ export default function Comment(props) {
    
     const handleSubmit = e => {
       e.preventDefault();
-     // auth.onAuthentication();
-     //const fin_comment = this.comment;
       props.history.push({pathname: '/thankyou', state: {comment: comment, courseCode: courseCode,courseName: courseName}});
-   
-      
     };
     
       return(
