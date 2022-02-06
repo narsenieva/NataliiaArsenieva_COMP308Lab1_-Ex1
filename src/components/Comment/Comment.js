@@ -7,6 +7,8 @@ export default function Comment(props) {
  
     const [comment, setComment] = useState();
     const [email, setEmail] = useState();
+    const [courseCode, setCourseCode] = useState();
+    const [courseName, setCourseName] = useState();
    // let loggedEmail = auth.getToken();
 
     useEffect(() => {
@@ -22,7 +24,7 @@ export default function Comment(props) {
       e.preventDefault();
      // auth.onAuthentication();
      //const fin_comment = this.comment;
-      props.history.push({pathname: '/thankyou', state: comment});
+      props.history.push({pathname: '/thankyou', state: {comment: comment, courseCode: courseCode,courseName: courseName}});
    
       
     };
@@ -34,11 +36,11 @@ export default function Comment(props) {
         <form onSubmit={handleSubmit}>
           <label>
               <p>Course Code:</p>
-              <input type="text" onChange={e => e.target.value}/>
+              <input type="text" onChange={e => setCourseCode(e.target.value)}/>
           </label>
           <label>
               <p>Course Name:</p>
-              <input type="text" onChange={e => e.target.value}/>
+              <input type="text" onChange={e => setCourseName(e.target.value)}/>
           </label>
           <label>
             <p>Email</p>

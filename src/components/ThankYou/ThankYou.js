@@ -5,8 +5,10 @@ import '../Form.css';
 
 export default function ThankYou(props) {
     const [email, setEmail] = useState();
-    const comment = props.location.state;
-  
+    const comment = props.location.state.comment;
+    const courseCode = props.location.state.courseCode;
+    const courseName = props.location.state.courseName;
+
     useEffect(() => {
         const loggedInUser = auth.getToken();
         if (loggedInUser!=="") {
@@ -19,6 +21,8 @@ export default function ThankYou(props) {
           <h1>Thank You!</h1>
           <div className="thankYouBox">
             <label>
+              <p>You left a comment about {courseCode} - ({courseName}) course.</p>  
+              <p>--------------------------</p>   
               <p>Email: {email}</p>   
               <p>Comment: {comment}</p>   
             </label>
