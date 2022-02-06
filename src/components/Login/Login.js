@@ -1,12 +1,21 @@
 import React, { useState }  from 'react';
 import './Login.css';
+import auth  from '../../auth/auth';
+
 
 export default function Login (props){
+
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+    
     const handleSubmit = e => {
         e.preventDefault();
-        props.history.push('/comment');}
+        auth.onAuthentication();
+        auth.saveToken(email);
+        props.history.push('/comment');
+    
+    
+    }
     return(
             <div className="login-wrapper">
           <h1>Please Log In</h1>
