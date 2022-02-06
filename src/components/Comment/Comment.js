@@ -33,8 +33,20 @@ export default function Comment(props) {
         <h1>Enter Your Comments</h1>
         <form onSubmit={handleSubmit}>
           <label>
+              <p>Course Code:</p>
+              <input type="text" onChange={e => e.target.value}/>
+          </label>
+          <label>
+              <p>Course Name:</p>
+              <input type="text" onChange={e => e.target.value}/>
+          </label>
+          <label>
             <p>Email</p>
             <input type="text" defaultValue ={email} disabled = {true}/>
+          </label>
+          <label>
+              <p>Your GPA:</p>
+              <input type="text" onChange={e => e.target.value}/>
           </label>
           <label>
             <p>Comment</p>
