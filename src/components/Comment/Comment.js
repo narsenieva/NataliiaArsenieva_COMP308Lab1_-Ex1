@@ -1,6 +1,6 @@
 import React, { useState, useEffect }  from 'react';
 import auth  from '../../auth/auth';
-import './Comment.css';
+import '../Form.css';
 
 export default function Comment(props) {
 
@@ -29,8 +29,8 @@ export default function Comment(props) {
     
       return(
          
-          <div className="comment-wrapper">
-        <h1>Enter Your Comments</h1>
+        <div className="form-wrapper">
+        <h1>Enter Your Comment:</h1>
         <form onSubmit={handleSubmit}>
           <label>
               <p>Course Code:</p>
@@ -42,7 +42,7 @@ export default function Comment(props) {
           </label>
           <label>
             <p>Email</p>
-            <input type="text" defaultValue ={email} disabled = {true}/>
+            <input className = "disabled" type="text" defaultValue ={email} disabled = {true}/>
           </label>
           <label>
               <p>Your GPA:</p>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect }  from 'react';
 import auth  from '../../auth/auth';
 import Comment from '../Comment/Comment';
-import './ThankYou.css';
+import '../Form.css';
 
 export default function ThankYou(props) {
     const [email, setEmail] = useState();
@@ -15,14 +15,14 @@ export default function ThankYou(props) {
     },[]);
     
     return( 
-        <div className="comment-wrapper">
-        <h1>Enter Your Comments</h1>
-        <label>
-            <p>Email: {email}</p>   
-            <p>Comment: {comment}</p>   
-        </label>
-        <label>
-        </label>
+        <div className="form-wrapper">
+          <h1>Thank You!</h1>
+          <div className="thankYouBox">
+            <label>
+              <p>Email: {email}</p>   
+              <p>Comment: {comment}</p>   
+            </label>
+          </div>
         </div>
       )
     }

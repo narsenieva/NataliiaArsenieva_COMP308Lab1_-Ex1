@@ -1,5 +1,5 @@
 import React, { useState }  from 'react';
-import './Login.css';
+import '../Form.css';
 import auth  from '../../auth/auth';
 
 
@@ -18,7 +18,7 @@ export default function Login (props){
       
     }
     return(
-      <div className="login-wrapper">
+      <div className="form-wrapper">
       <h1>Please Log In</h1>
       <form onSubmit={handleSubmit}>
         <label>
