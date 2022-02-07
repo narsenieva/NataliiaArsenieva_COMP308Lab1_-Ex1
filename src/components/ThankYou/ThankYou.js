@@ -8,6 +8,7 @@ export default function ThankYou(props) {
     const comment = props.location.state.comment;
     const courseCode = props.location.state.courseCode;
     const courseName = props.location.state.courseName;
+    const professor = props.location.state.professor;
 
     useEffect(() => {
         const loggedInUser = auth.getToken();
@@ -21,7 +22,7 @@ export default function ThankYou(props) {
           <h1>Thank You!</h1>
           <div className="thankYouBox">
             <label>
-              <p>You left a comment about {courseCode} - ({courseName}) course.</p>  
+              <p>You left a comment about {professor} who teaches {courseCode} - ({courseName}) course.</p>  
               <p>--------------------------</p>   
               <p>Email: {email}</p>   
               <p>Comment: {comment}</p>   

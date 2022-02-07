@@ -6,6 +6,7 @@ export default function Comment(props) {
  
     const [comment, setComment] = useState();
     const [email, setEmail] = useState();
+    const [professor, setProfessor] = useState();
     const [courseCode, setCourseCode] = useState();
     const [courseName, setCourseName] = useState();
 
@@ -18,7 +19,7 @@ export default function Comment(props) {
    
     const handleSubmit = e => {
       e.preventDefault();
-      props.history.push({pathname: '/thankyou', state: {comment: comment, courseCode: courseCode,courseName: courseName}});
+      props.history.push({pathname: '/thankyou', state: {comment: comment, courseCode: courseCode,courseName: courseName, professor: professor}});
     };
     
       return(
@@ -37,6 +38,10 @@ export default function Comment(props) {
           <label>
             <p>Email</p>
             <input className = "disabled" type="text" defaultValue ={email} disabled = {true}/>
+          </label>
+          <label>
+              <p>Professor:</p>
+              <input type="text" onChange={e => setProfessor(e.target.value)}/>
           </label>
           <label>
               <p>Your GPA:</p>

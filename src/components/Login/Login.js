@@ -19,14 +19,14 @@ export default function Login (props){
     }
     return(
       <div className="form-wrapper">
-      <h1>Please Log In</h1>
+      <h1>Log In to Evaluate:</h1>
       <form onSubmit={handleSubmit}>
         <label>
-          <p>Email</p>
+          <p>Email:</p>
           <input type="text" onChange={e => setEmail(e.target.value)}/>
         </label>
         <label>
-          <p>Password</p>
+          <p>Password:</p>
           <input type="password" onChange={e => setPassword(e.target.value)}/>
         </label>
         <div>
